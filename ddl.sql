@@ -122,11 +122,11 @@ create view if not exists v_aggregates as
 create table kaf_logs
 (
     id String,
-    timestamp_utc String,
+    timestamp_utc DATETIME64,
     `user` String,
-    workspace_id String,
-    dashboard_id String,
-    widget_id String
+    workspace_id UUID,
+    dashboard_id UUID,
+    widget_id UUID
 )
     ENGINE Kafka('kafka:9092', 'log_topic_2', 'clickhouse_group3', 'JSONEachRow');
 
